@@ -23,14 +23,62 @@
         // The ZWSID = X1-ZWz17iadm8naiz_8mfo0
       -->
 <script>
-function myMap() {
-var mapProp= {
-  center:new google.maps.LatLng(37.82, -97.39),
-  zoom:4,
-};
-var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
-}
+    function myMap() {
+    var mapProp= {
+    center:new google.maps.LatLng(37.82, -97.39),
+    zoom:4,
+    };
+    var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+    }
 </script>
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 </div>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh8slGTIfljtLw0cI2mwI622iNuUpRdWY&callback=myMap"></script>
 </html>
+<!-- jhensen's Code-->
+<script> 
+
+
+const express = require('express');
+const request = require('request');
+
+const app = express();
+
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  next();
+});
+
+app.get('/jokes/random', (req, res) => {
+  request(
+    { url: 'https://medium.com/@dtkatz/3-ways-to-fix-the-cors-error-and-how-access-control-allow-origin-works-d97d55946d9' },
+    (error, response, body) => {
+      if (error || response.statusCode !== 200) {
+        return res.status(500).json({ type: 'error', message: err.message });
+      }
+
+      res.json(JSON.parse(body));
+    }
+  )
+});
+
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log(`listening on ${PORT}`));
+
+
+/*
+$.ajax({
+  method: 'GET',
+  url: 'https://api.crimeometer.com/v1/incidents/crowdsourced-raw-data?lat={lat}&lon={lon}&distance={distance}&datetime_ini={datetime_ini}&datetime_end={datetime_end}&page={page}',
+  headers: {
+    'Content-Type': 'application/json',
+   'Access-Control-Allow-Origin': 'http://localhost:3000',
+    'x-api-key': 'fjrTErJm274w1yQ0IR8rorUEqt4lSz388jXyPUM5'
+  }}, function (error, response, body) {
+  console.log('Status:', response.statusCode);
+  console.log('Headers:', JSON.stringify(response.headers));
+  console.log('Response:', body);
+
+}); */
+
+</script>
