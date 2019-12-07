@@ -73,7 +73,11 @@ body {
 }
 
 .sub-container-2 {
+    text-align: center;
     height: 600px;
+    width: 960px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #search-button {
@@ -112,4 +116,8 @@ body {
     padding: 5px 0px 0px 0px;
     text-align: center;
     margin-top: 100px;
+}
+
+.uk-icon-github {
+    color: black;
 }
