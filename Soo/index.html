@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/uikit.min.css" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="js/uikit.min.js"></script>
+    <script src="js/uikit-icons.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="crossorigin="anonymous"></script>
+  </head>
+    <body>
+
+        <nav class="uk-navbar-container" uk-navbar>
+            <div class="uk-navbar-right">
+                <ul class="uk-navbar-nav">
+                    <li class="uk-active"><a href="#">Sports</a></li>
+                    <li class="uk-active"><a href="#">Concerts</a></li>
+                    <li class="uk-active"><a href="#">About</a></li>
+                </ul>
+            </div>
+        </nav>
+        
+      <div class="main-container uk-grid bgstyle1">
+          <h1 class="uk-width-1-1 pregame-text">Pregame</h1>
+          <div class="search-container uk-grid ">
+          <div id="find-text">Find</div>
+          <form class="uk-search uk-search-default pregame-search">
+              <input class="uk-search-input" type="search" placeholder="sporting events, concerts and more">
+          </form>
+          <div id="near-text">Near</div>
+          <form class="uk-search uk-search-default location-search">
+              <a id="search-button" href="" class="uk-search-icon-flip" uk-search-icon></a>
+              <input class="uk-search-input" type="search" placeholder="address, city, state or zip">
+          </form>
+        </div>
+      </div>
+
+      <div class="sub-container">
+          <h1 class="uk-width-1-1 pregame-text-2">Find restaurants near your event</h1>
+      </div>
+
+      <div class="uk-grid sub-container-2 ">
+          <div class="subsportsbg uk-width-1-2">
+              <h1 class="uk-width-1-1 pregame-text">Sporting Events</h1>
+          </div>
+    
+          <div class="subconcertsbg uk-width-1-2">
+              <h1 class="uk-width-1-1 pregame-text">Concerts</h1>
+          </div>
+      </div>
+
+
+        <script type="text/javascript">
+
+            var queryURL = "https://api.seatgeek.com/2/events?client_id=MjUwMTk3MnwxNTc1NjA5MTQ3LjEz&client_secret=84aa470610769c3c62e467f570e26522756ab7eb1575dd6ee8a271f738dd1acb";
+        
+            $.ajax({
+              url: queryURL,
+              method: "GET"
+            }).then(function(response) {
+
+            });
+
+          </script>
+
+    </body>
+</html>
