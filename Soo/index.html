@@ -79,6 +79,7 @@
               method: "GET"
           }).then(function(response) {
                 console.log(response);
+                $("#events-result").empty();
               
                 var title = response.events[0].title;
                 console.log(title);
