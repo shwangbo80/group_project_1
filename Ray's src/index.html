@@ -15,49 +15,72 @@
 
     $(document).ready(function() 
         {
-
-            var la_id = 281;
-            var riverside_id = 216;
-            var sf_id = 306;
-            var sj_id = 10883;
-
-            var city = la_id;
-            var searchCity = "&q=" + city;
+        
+            //--- search for city---//
+            var cityVal = "vegas";
+            //--- API settings for City Search
             var settings = 
                 {
                     "async": true,
                     "crossDomain": true,
-                    "url": "https://developers.zomato.com/api/v2.1/search?"+"entity_id="+ city + "&entity_type=city",
+                    "url": "https://developers.zomato.com/api/v2.1/cities?q="+ cityVal,
                     "method": "GET",
                     "headers":
-                        {
-                            "user-key": "d710754ce67200fb6fb9b5e26139f50e",
+                       {
+                           "user-key": "d710754ce67200fb6fb9b5e26139f50e",
                             'Content-Type': 'application/json'
                         }
                 };
-                
-            $.getJSON(settings, function(data)
+            // --- API request Call for --- 
+            $.getJSON(settings, function(data){}).done(function(data)
                 {
-                    data = data.restaurants;
-                    //console.log(data);
-                    // for each restaurant
-                        // get name
-                        // get location
-                        // get rating 
-                    $.each(data, function(index,arg)
+                    cityID = data.location_suggestions[0].id; 
+                    var settings = 
                         {
-                            var restaurantListed = data[index];
-
-                            $.each(restaurantListed,function(index,arg)
+                            "async": true,
+                            "crossDomain": true,
+                            "url": "https://developers.zomato.com/api/v2.1/search?"+"entity_id="+ cityID + "&entity_type=city",
+                            "method": "GET",
+                            "headers":
                                 {
-                                    console.log(restaurantListed.restaurant.name);
-                                }); 
-                        });   
+                                    "user-key": "d710754ce67200fb6fb9b5e26139f50e",
+                                    'Content-Type': 'application/json'
+                                }
+                        };
+                        
+
+                    // --- API for local Restaurants --- 
+                    $.getJSON(settings, function(data)
+                        {
+                            data = data.restaurants;
+                            // for every restaurant object,
+                            $.each(data, function(index,arg)
+                                {
+                                    // for every restaurant 
+                                    var restaurantListed = data[index];
+
+                                    $.each(restaurantListed,function(index,arg)
+                                        {
+                                            var restaurantName = restaurantListed.restaurant.name;
+                                        }); 
+                                });   
                     
+                        });
                 });
-
-
-
+                
         });
 
+
+//--------------For Reference-----------------
+            /*
+            var la_id = 281;
+            var riverside_id = 216;
+            var sf_id = 306;
+            var sj_id = 10883;
+            var orange_id = 484;
+            var milpitas_id = 10820;
+            var lv_id = 282; 
+            */
+
 </script>
+
