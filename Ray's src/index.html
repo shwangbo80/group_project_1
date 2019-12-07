@@ -17,9 +17,9 @@
         {
 
             var la_id = 281;
-            var riverside_id = 216
-            var sf_id = 306
-            var sj_id = 10883
+            var riverside_id = 216;
+            var sf_id = 306;
+            var sj_id = 10883;
 
             var city = la_id;
             var searchCity = "&q=" + city;
@@ -27,7 +27,7 @@
                 {
                     "async": true,
                     "crossDomain": true,
-                    "url": "https://developers.zomato.com/api/v2.1/search",
+                    "url": "https://developers.zomato.com/api/v2.1/search?"+"entity_id="+ city + "&entity_type=city",
                     "method": "GET",
                     "headers":
                         {
@@ -39,22 +39,24 @@
             $.getJSON(settings, function(data)
                 {
                     data = data.restaurants;
+                    //console.log(data);
                     // for each restaurant
                         // get name
-                        // get 
+                        // get location
+                        // get rating 
+                    $.each(data, function(index,arg)
+                        {
+                            var restaurantListed = data[index];
+
+                            $.each(restaurantListed,function(index,arg)
+                                {
+                                    console.log(restaurantListed.restaurant.name);
+                                }); 
+                        });   
+                    
                 });
 
 
-/*
-data = data.restaurants;
-
-$.each(data, function(index, value) {
-
- var x = data[index];
-  console.log(typeof x);
- $.each(x, function(index, value) {
-  var location = x.restaurant.location;
-  var userRating = x.restaurant.user_rating; */
 
         });
 
