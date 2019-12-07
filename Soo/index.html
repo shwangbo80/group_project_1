@@ -26,7 +26,7 @@
         </nav>
         
       <div class="main-container uk-grid bgstyle1">
-          <h1 class="uk-width-1-1 pregame-text">Pregame</h1>
+          <img src="img/logo1.png">
           <div class="search-container uk-grid ">
           <div id="find-text">Find</div>
           <form class="uk-search uk-search-default pregame-search">
@@ -85,7 +85,7 @@
                 $("#events-result").append(newAddress);
                 var tickets = response.events[0].url;
                 console.log(tickets);
-                var newTickets = $("<a>").text(tickets);
+                var newTickets = $("<p>").html("<a href="+tickets+">Purchase Tickets For This Event</a>");
                 $("#events-result").append(newTickets);
               
               });
