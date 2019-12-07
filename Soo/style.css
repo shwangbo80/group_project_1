@@ -75,7 +75,7 @@ body {
 .sub-container-2 {
     text-align: center;
     height: 600px;
-    width: 960px;
+    width: 1200px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -120,4 +120,26 @@ body {
 
 .uk-icon-github {
     color: black;
+}
+
+.flavors-container {
+    padding-left: 0px;
+}
+
+.flavors-text {
+    text-align: justify;
+    padding: 20px;
+}
+
+.sub-title {
+    color: black;
+    text-align: center;
+    font-size: 50px;
+    font-weight: bold;
+    margin-top: 50px;
+}
+
+.text-sportingevents {
+    margin-top: 50px;
+
 }
