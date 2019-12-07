@@ -44,6 +44,22 @@ body {
     margin-bottom: -500px;
 }
 
+#eventslist {
+    padding: 0px;
+    width: 350px;
+}
+
+
+#eatslist {
+    padding: 0px;
+    width: 350px;
+}
+
+.text-sportingevents {
+    padding: 0px;
+    margin-top: 50px;
+}
+
 .pregame-search {
     margin-left: auto;
     margin-right: 0px;
@@ -79,10 +95,13 @@ body {
     width: 1200px;
     margin-left: auto;
     margin-right: auto;
+    padding: 0px;
 }
 
-#event-result {
-    text-align: left;
+#events-result {
+    text-align: center;
+    padding-left: 40px;
+    padding-right: 40px;
 }
 
 #search-button {
@@ -142,9 +161,4 @@ body {
     font-size: 50px;
     font-weight: bold;
     margin-top: 50px;
-}
-
-.text-sportingevents {
-    margin-top: 50px;
-
 }
