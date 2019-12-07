@@ -47,12 +47,15 @@ body {
 #eventslist {
     padding: 0px;
     width: 350px;
+    margin-bottom: 0px;
 }
 
 
 #eatslist {
     padding: 0px;
     width: 350px;
+    margin-bottom: 0px;
+
 }
 
 .text-sportingevents {
@@ -95,13 +98,22 @@ body {
     width: 1200px;
     margin-left: auto;
     margin-right: auto;
-    padding: 0px;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
 }
 
 #events-result {
     text-align: center;
     padding-left: 40px;
     padding-right: 40px;
+    margin-bottom: 0px;
+}
+
+#eats-result {
+    text-align: center;
+    padding-left: 40px;
+    padding-right: 40px;
+    margin-bottom: 0px;
 }
 
 #search-button {
@@ -148,11 +160,7 @@ body {
 
 .flavors-container {
     padding-left: 0px;
-}
-
-.flavors-text {
-    text-align: justify;
-    padding: 20px;
+    margin: 0px;
 }
 
 .sub-title {
