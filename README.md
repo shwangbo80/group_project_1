@@ -1,2 +1,1 @@
-# group_project_1
-Master branch repo for group project 1
+https://shwangbo80.github.io/group_project_1/
