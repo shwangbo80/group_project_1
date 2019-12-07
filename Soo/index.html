@@ -86,7 +86,7 @@
                 $("#events-result").append(newTitle);
                 var venueAddress = response.events[0].venue.address;
                 console.log(venueAddress);
-                var newAddress = $("<h3").text(venueAddress);
+                var newAddress = $("<p>").text(venueAddress);
                 $("#events-result").append(newAddress);
                 var tickets = response.events[0].url;
                 console.log(tickets);
