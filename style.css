@@ -1,6 +1,18 @@
-body {
-    width: 100%;
-}
+
+@media only screen and (max-width: 500px) {
+    body {
+      width: 450px;
+    }
+
+    #resultdiv {
+        background: white;
+        width: auto;
+    }
+
+    .search-grid1 {
+        margin-bottom: -50px;
+    }
+  }
 
 .bgstyle1 {
     background-image: url(img/food_1.jpg);
@@ -20,6 +32,7 @@ body {
 .search-container {
     margin-left: auto;
     margin-right: auto;
+    align-content: center;
 }
 
 .uk-navbar-container {
@@ -65,17 +78,6 @@ body {
 
 .pregame-search {
     margin-left: auto;
-    margin-right: 0px;
-    margin-top: 100px;
-    width: 450px;
-    height: 40px;
-    font-size: 20px;
-    background: white;
-    padding: 0px;
-}
-
-.location-search {
-    margin-left: 0px;
     margin-right: auto;
     margin-top: 100px;
     width: 400px;
@@ -83,13 +85,19 @@ body {
     font-size: 20px;
     background: white;
     padding: 0px;
+    align-content: center;
 }
 
-.sub-container {
+.location-search {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+    width: 400px;
+    height: 40px;
+    font-size: 20px;
+    background: white;
     padding: 0px;
-    height: 600px;  
-    background: black;
-    color: white;
+    align-content: center;
 }
 
 .sub-container-2 {
@@ -104,14 +112,14 @@ body {
     text-align: center;
     padding-left: 40px;
     padding-right: 40px;
-    height: 0px;
+    height: auto;
 }
 
 #eats-result {
     text-align: center;
     padding-left: 40px;
     padding-right: 40px;
-    height: 0px;
+    height: auto;
 }
 
 #search-button {
@@ -142,10 +150,6 @@ body {
     margin-top: 100px;
 }
 
-.uk-icon-github {
-    color: black;
-}
-
 .sub-title {
     color: black;
     text-align: center;
@@ -157,6 +161,7 @@ body {
 
 #flavors-container {
     background-color: red;
+    width: auto;
 }
 
 #resultdiv {

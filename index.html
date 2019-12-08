@@ -13,7 +13,7 @@
     <script src="js/uikit-icons.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.js"integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="crossorigin="anonymous"></script>
   </head>
-    <body> 
+    <body class="uk-width-1-1"> 
 
         <!-- <nav class="uk-navbar-container" uk-navbar>
             <div class="uk-navbar-right">
@@ -27,16 +27,23 @@
         
       <div class="main-container uk-grid bgstyle1">
           <h1 class="uk-width-1-1 pregame-text">Pregame</h1>
-          <div class="search-container uk-grid ">
+          <div class="search-container uk-grid">
+
+        <div class="uk-grid search-grid1">    
           <div id="find-text">Find</div>
           <form class="uk-search uk-search-default pregame-search">
               <input id="eventsearch" class="uk-search-input" type="search" placeholder="sporting events, concerts and more">
           </form>
-          <div id="near-text">Zip</div>
+           </div>
+
+        <div class="uk-grid search-grid2" style="margin-top: 0px";>    
+           <div id="near-text">Zip</div>
           <form class="uk-search uk-search-default location-search">
               <button id="searchbtn" href="" class="uk-search-icon-flip" uk-search-icon></button>
               <input id="zipsearch" class="uk-search-input" type="search" placeholder="zipcode">
           </form>
+        </div>
+
         </div>
       </div>
 
