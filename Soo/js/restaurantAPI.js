@@ -1,9 +1,19 @@
-
+var isNotFirst = 0;
 $(document).ready(function() 
     {
+        
+        $('#searchbtn').on("click",function(event){
+        event.preventDefault()
     
+        isNotFirst++;
+        if(isNotFirst>1)
+            {
+                $('#eats-result').empty();
+               
+    
+            }
         //--- search for city---//
-        var cityVal = "vegas"; // change to pull data from searchbar 
+        var cityVal = $("#zipsearch").val(); // change to pull data from searchbar 
 
         //--- API settings for City Search
 
@@ -77,5 +87,6 @@ $(document).ready(function()
                 
                     }); 
             });
+        });
             
     });
