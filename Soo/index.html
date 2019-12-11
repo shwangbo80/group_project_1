@@ -69,7 +69,8 @@
 
 
                     $("#resultdiv").empty();
-                      $("#resultdiv").html("<div id='events-result' class='uk-width-1-2'><div id='eats-result' class='uk-width-1-2'>")
+                      $("#resultdiv").append("<div id='events-result' class='uk-width-1-2'>")
+                      $("#resultdiv").append("<div id='eats-result' class='uk-width-1-2'>")        
                       $("#events-result").html("<h2 id='eventstitle'>Events List</h2>");
                       $("#eats-result").html("<h2 id='eatstitle'>Local Eats</h2>");
                       for(var i = 1; i < 6; i++) {
@@ -107,7 +108,7 @@
 
                     $("#resultdiv").empty();
                       //$("#events-result").append;
-                      $("#resultdiv").html("<div id='events-result' class='uk-width-1-2'>")
+                      $("#resultdiv").html("<div id='events-result' class='uk-width-1-1'>")
                       $("#events-result").html("<h2 id='eventstitle'>Events List</h2>");
                       for(var j = 1; j < 6; j++) {
                         var newDiv2 = $("<div id='eventDivs'>");
