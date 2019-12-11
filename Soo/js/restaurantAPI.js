@@ -61,6 +61,10 @@ $(document).ready(function()
                             {
                                 // for every restaurant 
                                 var restaurantListed = data[index];
+                                if (index >4)
+                                    {
+                                        return false;
+                                    }
                                 $.each(restaurantListed,function(index,arg)
                                     {
                                         // info per restaurant
@@ -69,19 +73,21 @@ $(document).ready(function()
                                         var ratingObj = '#'+restaurantListed.restaurant.user_rating.rating_color;
                                         var imgObj = restaurantListed.restaurant.thumb;
                                         var restaurantAddr = restaurantListed.restaurant.location.address; // type string; used for address
+                                        var restaurantURL = restaurantListed.restaurant.url;
 
                                         var restaurantObj = $("<div class='restaurant-object'>").appendTo($('#eats-result'));
                                         restaurantObj
                                         .html("<h2 class='restaurant-names'>" + restaurantName + "</h2>" + "<img src='"+ imgObj+"'>"
                                     
-                                                + "<div class='restaurant-address'>" + restaurantAddr +"</div>" + "<div class='restaurant-ratings'>"+ restaurantRating + "</div>" )
+                                                + "<div class='restaurant-address'>" + restaurantAddr +"</div>" + "<div class='restaurant-ratings'>"+ restaurantRating + "</div>"
+                                                + "<a target ='_blank' href='"+  restaurantURL +"'>" +"More Info </a>");
                                         // to be edited 
                                         
-                                        restaurantObj.css({padding:"25px", fontWeight:"bold",textAlign:"center",border:"1px solid black"});
+                                        restaurantObj.css({marginBottom:"10px", padding:"25px", fontWeight:"bold",textAlign:"center", backgroundColor:"#f8f8f8", borderRadius:"10px"});
                                         var ratingsObj = $('.restaurant-ratings');
-                                        ratingsObj.css({height:"25px", textAlign:"center", marginLeft:"45%", color:"white",width:"50px",background:ratingObj});
+                                        ratingsObj.css({height:"25px", margin:"10px", textAlign:"center", marginLeft:"45%", color:"white",width:"50px",background:ratingObj});
                                     
-
+                                        
                                     }); 
                             });   
                 

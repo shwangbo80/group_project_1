@@ -19,16 +19,7 @@
           <h1 class="uk-width-1-1 pregame-text">Pregame</h1>
           <div class="search-container uk-grid">
 
-        <div class="uk-grid search-grid1">    
-          <div id="find-text">Find</div>
-          <form class="uk-search uk-search-default pregame-search">
-              <button id="searchbtn2" href="" class="uk-search-icon-flip" uk-search-icon></button>
-              <input id="eventsearch" class="uk-search-input" type="search" placeholder="Search by type of sports">
-          </form>
-           </div>
         
-        &nbsp;&nbsp;&nbsp;&nbsp;
-        &nbsp;&nbsp;&nbsp;&nbsp;
 
         <div class="uk-grid search-grid2" style="margin-top: 0px";>    
            <div id="near-text">City</div>
@@ -52,7 +43,7 @@
       <div id="resultdiv" class="uk-grid sub-container-2">
         </div>
     </div>
-
+    <script src="js/restaurantAPI.js"></script>
     <script type="text/javascript">
 
         $( document ).ready(function() {
@@ -95,43 +86,7 @@
                       }
                     });
         });
-        $('#searchbtn2').click(function() {
-          event.preventDefault();
-            var byEvent2 = document.getElementById("eventsearch").value;
-            console.log(byEvent2);
-            var queryURL2 = "https://api.seatgeek.com/2/performers?taxonomies.name=" + byEvent2 + "&per_page=10&client_id=MjUwMTk3MnwxNTc1NjA5MTQ3LjEz";
-                $.ajax({
-                    url: queryURL2,
-                    method: "GET"
-                }).then(function(response2) {
-                      console.log(response2);
-
-                    $("#resultdiv").empty();
-                      //$("#events-result").append;
-                      $("#resultdiv").html("<div id='events-result' class='uk-width-1-1'>")
-                      $("#events-result").html("<h2 id='eventstitle'>Events List</h2>");
-                      for(var j = 1; j < 6; j++) {
-                        var newDiv2 = $("<div id='eventDivs'>");
-                        var title2 = response2.performers[j].name;
-                        console.log(title2);
-                        var newTitle2 = $("<h2>").text(title2);
-                        $(newDiv2).append(newTitle2);
-
-                        var venueType = response2.performers[j].taxonomies[1].name;
-                        console.log(venueType);
-                        var newType = $("<h3>").text("Type of event: " + venueType);
-                        
-                        $(newDiv2).append(newType);
-
-                        var tickets2 = response2.performers[j].url;
-                        console.log(tickets2);
-                        var newTickets2 = $("<p>").html("<a href="+tickets2+">Purchase Tickets For This Event</a>");
-                        $(newDiv2).append(newTickets2);
-
-                        $("#events-result").append(newDiv2);
-                      }
-                });
-        });
+       
         });
       </script>
 
