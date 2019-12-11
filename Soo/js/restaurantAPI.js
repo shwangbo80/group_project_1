@@ -57,26 +57,25 @@ $(document).ready(function()
                                         var restaurantName = restaurantListed.restaurant.name; // type  string; 
                                         var restaurantRating = restaurantListed.restaurant.user_rating.aggregate_rating;  // type object; used for getting the rating
                                         var ratingObj = '#'+restaurantListed.restaurant.user_rating.rating_color;
-                                    
-                                        console.log(ratingObj)
+                                        var imgObj = restaurantListed.restaurant.thumb;
                                         var restaurantAddr = restaurantListed.restaurant.location.address; // type string; used for address
 
                                         var restaurantObj = $("<div class='restaurant-object'>").appendTo($('#eats-result'));
                                         restaurantObj
-                                        .html("<h3 class='restaurant-names'>" + restaurantName + "</h3>" + "<div class='restaurant-ratings'>"+ restaurantRating + "</div>" 
-                                                + "<div class='restaurant-address'>" + restaurantAddr +"</div>")
+                                        .html("<h2 class='restaurant-names'>" + restaurantName + "</h2>" + "<img src='"+ imgObj+"'>"
+                                    
+                                                + "<div class='restaurant-address'>" + restaurantAddr +"</div>" + "<div class='restaurant-ratings'>"+ restaurantRating + "</div>" )
                                         // to be edited 
-                                       
-                                        restaurantObj.css({padding:"25px;", border:"1px solid black"});
-                                        var ratingsObj = $('.restaurant-ratings');
-                                        ratingsObj.css({background:ratingObj});
                                         
-
+                                        restaurantObj.css({padding:"25px", fontWeight:"bold",textAlign:"center",border:"1px solid black"});
+                                        var ratingsObj = $('.restaurant-ratings');
+                                        ratingsObj.css({height:"25px", textAlign:"center", marginLeft:"45%", color:"white",width:"50px",background:ratingObj});
+                                    
 
                                     }); 
                             });   
                 
-                    });
+                    }); 
             });
             
     });
