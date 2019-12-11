@@ -4,7 +4,7 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 <head>
-    <title>Title</title>
+    <title>PREGAME</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/uikit.min.css" />
@@ -13,86 +13,126 @@
     <script src="js/uikit-icons.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.js"integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="crossorigin="anonymous"></script>
   </head>
-    <body>
-
-        <nav class="uk-navbar-container" uk-navbar>
-            <div class="uk-navbar-right">
-                <ul class="uk-navbar-nav">
-                    <li class="uk-active"><a href="#">Sports</a></li>
-                    <li class="uk-active"><a href="#">Concerts</a></li>
-                    <li class="uk-active"><a href="#">About</a></li>
-                </ul>
-            </div>
-        </nav>
+    <body class="uk-width-1-1"> 
         
       <div class="main-container uk-grid bgstyle1">
           <h1 class="uk-width-1-1 pregame-text">Pregame</h1>
-          <div class="search-container uk-grid ">
+          <div class="search-container uk-grid">
+
+        <div class="uk-grid search-grid1">    
           <div id="find-text">Find</div>
           <form class="uk-search uk-search-default pregame-search">
-              <input id="eventsearch" class="uk-search-input" type="search" placeholder="sporting events, concerts and more">
+              <button id="searchbtn2" href="" class="uk-search-icon-flip" uk-search-icon></button>
+              <input id="eventsearch" class="uk-search-input" type="search" placeholder="Search by type of sports">
           </form>
-          <div id="near-text">Zip</div>
+           </div>
+        
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;
+
+        <div class="uk-grid search-grid2" style="margin-top: 0px";>    
+           <div id="near-text">City</div>
           <form class="uk-search uk-search-default location-search">
               <button id="searchbtn" href="" class="uk-search-icon-flip" uk-search-icon></button>
-              <input id="zipsearch" class="uk-search-input" type="search" placeholder="zipcode">
+              <input id="zipsearch" class="uk-search-input" type="search" placeholder="Search local events by city">
           </form>
         </div>
+
+        </div>
       </div>
-      <div class="uk-grid sub-container-2">
-
-         <div id="events-result" class="text-sportingevents uk-width-1-2">
-            <h2 id="eventstitle">Events List</h2>
+         <nav class="uk-navbar-container" uk-navbar style="width:100%;">
+            <div class="uk-navbar-center">
+                <ul class="uk-navbar-nav">
+                    <li class="uk-active"><a href="#">Sports</a></li>
+                    <li class="uk-active"><a href="#">Flavor Profiles</a></li>
+                    <li class="uk-active"><a href="#">About Us</a></li>
+                </ul>
+            </div>
+        </nav>
+      <div id="resultdiv" class="uk-grid sub-container-2">
         </div>
-
-
-        <div id="eats-result" class="text-sportingevents uk-width-1-2">
-            <h2 id="eatstitle">Eats</h2>
-        </div>
-    </div>
     </div>
 
-    </div>
+    <script type="text/javascript">
 
-    </div>
+        $( document ).ready(function() {
+        $('#searchbtn').click(function() {
+          event.preventDefault();
+            var citySearch = document.getElementById("zipsearch").value;
+            console.log(citySearch);
+            var queryURL = "https://api.seatgeek.com/2/venues?city="+citySearch+"&per_page=10&client_id=MjUwMTk3MnwxNTc1NjA5MTQ3LjEz";
+                $.ajax({
+                    url: queryURL,
+                    method: "GET"
+                }).then(function(response) {
+                      console.log(response);
 
-<script type="text/javascript">
 
-  $( document ).ready(function() {
+                    $("#resultdiv").empty();
+                      $("#resultdiv").html("<div id='events-result' class='uk-width-1-2'><div id='eats-result' class='uk-width-1-2'>")
+                      $("#events-result").html("<h2 id='eventstitle'>Events List</h2>");
+                      $("#eats-result").html("<h2 id='eatstitle'>Local Eats</h2>");
+                      for(var i = 1; i < 6; i++) {
+                        var newDiv = $("<div id='eventDivs'>");
+                        var title = response.venues[i].name;
+                        console.log(title);
+                        var newTitle = $("<h2>").text(title);
+                        $(newDiv).append(newTitle);
 
-  $('#searchbtn').click(function() {
+                        var venueAddress = response.venues[i].address;
+                        var extAddress = response.venues[i].extended_address;
+                        console.log(venueAddress);
+                        var newAddress = $("<p>").text(venueAddress + " " + extAddress);
+                        $(newDiv).append(newAddress);
 
-    event.preventDefault();
-      
-      var zipcode = document.getElementById("zipsearch").value;
-      console.log(zipcode);
-      var queryURL = "https://api.seatgeek.com/2/events?postal_code="+zipcode+"&per_page=10&client_id=MjUwMTk3MnwxNTc1NjA5MTQ3LjEz";
+                        var tickets = response.venues[i].url;
+                        console.log(tickets);
+                        var newTickets = $("<p>").html("<a href="+tickets+">Purchase Tickets For This Event</a>");
+                        $(newDiv).append(newTickets);
 
-          $.ajax({
-              url: queryURL,
-              method: "GET"
-          }).then(function(response) {
-                console.log(response);
-                $("#events-result").empty();
-              
-                var title = response.events[0].title;
-                console.log(title);
-                var newTitle = $("<h2>").text(title);
-                $("#events-result").append(newTitle);
-                var venueAddress = response.events[0].venue.address;
-                console.log(venueAddress);
-                var newAddress = $("<p>").text(venueAddress);
-                $("#events-result").append(newAddress);
-                var tickets = response.events[0].url;
-                console.log(tickets);
-                var newTickets = $("<a>").text(tickets);
-                $("#events-result").append(newTickets);
-              
-              });
-  });
+                        $("#events-result").append(newDiv);
+                      }
+                    });
+        });
+        $('#searchbtn2').click(function() {
+          event.preventDefault();
+            var byEvent2 = document.getElementById("eventsearch").value;
+            console.log(byEvent2);
+            var queryURL2 = "https://api.seatgeek.com/2/performers?taxonomies.name=" + byEvent2 + "&per_page=10&client_id=MjUwMTk3MnwxNTc1NjA5MTQ3LjEz";
+                $.ajax({
+                    url: queryURL2,
+                    method: "GET"
+                }).then(function(response2) {
+                      console.log(response2);
 
-  });
-</script>
+                    $("#resultdiv").empty();
+                      //$("#events-result").append;
+                      $("#resultdiv").html("<div id='events-result' class='uk-width-1-2'>")
+                      $("#events-result").html("<h2 id='eventstitle'>Events List</h2>");
+                      for(var j = 1; j < 6; j++) {
+                        var newDiv2 = $("<div id='eventDivs'>");
+                        var title2 = response2.performers[j].name;
+                        console.log(title2);
+                        var newTitle2 = $("<h2>").text(title2);
+                        $(newDiv2).append(newTitle2);
+
+                        var venueType = response2.performers[j].taxonomies[1].name;
+                        console.log(venueType);
+                        var newType = $("<h3>").text("Type of event: " + venueType);
+                        
+                        $(newDiv2).append(newType);
+
+                        var tickets2 = response2.performers[j].url;
+                        console.log(tickets2);
+                        var newTickets2 = $("<p>").html("<a href="+tickets2+">Purchase Tickets For This Event</a>");
+                        $(newDiv2).append(newTickets2);
+
+                        $("#events-result").append(newDiv2);
+                      }
+                });
+        });
+        });
+      </script>
 
     </body>
 </html>
