@@ -1,0 +1,526 @@
+html {
+    scroll-behavior: smooth;
+  }
+
+#footer {
+    color: white;
+    background-color: black;
+    height: 50px;
+    text-align: center;
+    padding-top: 20px;
+}
+
+.uk-text-bold {
+    font-size: 20px;
+}
+
+#about-container {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+    margin-bottom: 200px;
+    text-align: center;
+}
+
+#flavors-container {
+    margin-top: 200px;
+    margin-bottom: 100px;
+}
+
+#venue-container {
+    margin-top: 200px;
+    margin-bottom: 100px;
+}
+
+.uk-card-title {
+    font-size: 30px;
+    text-align: center;
+}
+
+.uk-textarea {
+    resize: none;
+}
+
+#submitbutton {
+    background-color: red;
+    color: white;
+    float: right;
+}
+
+#eventaddress {
+    font-weight: bold;
+}
+
+body {
+    width: 100%;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+#logocontainer {
+    width: 100%;
+    margin-top: 200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#logoimg {
+    width: 400px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0px;
+  }
+
+.bgstyle1 {
+    background-image: url(img/food_3_dark.jpg);
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-position-y: -70px;
+  }
+
+.main-container {
+    margin-left: auto;
+    margin-right: auto;
+    height: 750px;
+    width: 100%;
+}
+
+.search-container {
+    margin-left: auto;
+    margin-right: auto;
+    align-content: center;
+    margin-bottom: 200px;
+}
+
+#navbar-container {
+    width: 100%;
+    position: fixed;
+    top: 0px;
+    background-color: black;
+    color: white;
+    z-index: 5;
+    border-bottom: 1px solid gray;
+    opacity: .9;
+}
+
+
+.nav-button {
+    width: 200px;
+    text-align: center;
+    font-color: white;
+}
+
+.pregame-text {
+    text-align: center;
+    font-size: 75px;
+    color: white;
+    font-weight: bold;
+    padding: 75px 0px 0px 0px;
+    margin-bottom: -500px;
+    text-shadow: 0 1px 0 #ccc, 
+               0 2px 0 #c9c9c9,
+               0 3px 0 #bbb,
+               0 4px 0 #b9b9b9,
+               0 5px 0 #aaa,
+               0 6px 1px rgba(0,0,0,.1),
+               0 0 5px rgba(0,0,0,.1),
+               0 1px 3px rgba(0,0,0,.3),
+               0 3px 5px rgba(0,0,0,.2),
+               0 5px 10px rgba(0,0,0,.25),
+               0 10px 10px rgba(0,0,0,.2),
+               0 20px 20px rgba(0,0,0,.15);
+}
+
+.pregame-text-2 {
+    color: white;
+    text-align: center;
+    font-size: 75px;
+    padding: 250px 0px 0px 0px;
+    margin-bottom: -500px;
+}
+
+#quotediv {
+    background-color: lightblue;
+    width: 90%;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 5%;
+}
+
+#quotetext {
+    font-size: 25px;
+    margin-top: 0px;
+}
+
+#eventDivs {
+    background-color: rgb(246, 246, 246);
+    margin-bottom: 10px;
+    border-radius: 8px;
+    padding-top: 10px;
+    padding-bottom: 8px;
+}
+
+.restaurant-object {
+    background-color: rgb(246, 246, 246);
+    margin-bottom: 10px;
+    border-radius: 8px;
+    padding-top: 10px;
+    padding-bottom: 8px;
+}
+
+.restaurant-address {
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.restaurantinfo {
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.restaurant-images {
+    padding-bottom: 10px;
+}
+
+#eventslist {
+    padding: 0px;
+    width: 350px;
+    margin-bottom: 0px;
+}
+
+#eatslist {
+    padding: 0px;
+    width: 350px;
+    margin-bottom: 0px;
+}
+
+#eventstitle {
+    font-size: 50px;
+    font-weight: bold;
+}
+
+#eatstitle {
+    font-size: 50px;
+    font-weight: bold;
+}
+
+#resultstitle {
+    font-size: 50px;
+    font-weight: bold;
+}
+
+#restaurant-names {
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.text-sportingevents {
+    padding: 0px;
+    margin-top: 50px;
+}
+
+#ticketlink {
+    font-weight: bold;
+}
+
+.pregame-search {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+    width: 400px;
+    height: 40px;
+    font-size: 20px;
+    background: white;
+    padding: 0px;
+    align-content: center;
+}
+
+.location-search {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+    width: 400px;
+    height: 40px;
+    font-size: 20px;
+    background: white;
+    padding: 0px;
+    align-content: center;
+}
+
+.sub-container-2 {
+    text-align: center;
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+
+#resultdiv {
+    width: 100%;
+    line-height: 1.5;
+    margin-top: 200px;
+}
+
+#events-result {
+    text-align: center;
+    padding-left: 40px;
+    padding-right: 40px;
+    height: auto;
+    line-height: 1.5;
+}
+
+#eats-result {
+    text-align: center;
+    padding-left: 40px;
+    padding-right: 40px;
+    height: auto;
+}
+
+#search-button {
+    background: red;
+    color: white;
+    height: 40px;
+}
+
+#near-text {
+    background-color: white;
+    font-size: 20px;
+    color: black;
+    height: 35px;
+    width: 50px;
+    padding: 5px 0px 0px 0px;
+    text-align: center;
+    margin-top: 100px;
+}
+
+#find-text {
+    background-color: white;
+    font-size: 20px;
+    color: black;
+    height: 35px;
+    width: 50px;
+    padding: 5px 0px 0px 0px;
+    text-align: center;
+    margin-top: 100px;
+}
+
+.sub-title {
+    color: black;
+    text-align: center;
+    font-size: 50px;
+    font-weight: bold;
+    margin-top: 50px;
+}
+
+
+#flavors-container {
+    width: auto;
+}
+
+.uk-card-1 {
+    background-image: url("img/sweet.png");
+    background-size: cover;
+
+}
+
+.uk-card-2 {
+    background-image: url("img/salty.png");
+    background-size: cover;
+}
+
+.uk-card-3 {
+    background-image: url( "img/bitter.png");
+    background-size: cover;
+    
+    
+}
+
+.uk-card-4 {
+    background-image: url("img/sour.png");
+    background-size: cover;
+
+
+}
+
+.uk-card-5 {
+    background-image: url("img/sushi.png");
+    background-size: cover;
+ 
+}
+
+.uk-card-6 {
+    background-image: url("img/spicy.png");
+    background-size: cover;
+}
+
+.uk-card-7 {
+    background-image: url("img/comedy.png");
+    background-size: cover;
+}
+
+.uk-card-8 {
+    background-image: url("img/staples.png");
+    background-size: cover;
+}
+
+.uk-card-9 {
+    background-image: url("img/carnegie.png");
+    background-size: cover;
+}
+
+.uk-card-10 {
+    background-image: url("img/msg.png");
+    background-size: cover;
+}
+
+.uk-card-11 {
+    background-image: url("img/wrigley.png");
+    background-size: cover;
+}
+
+.uk-card-12 {
+    background-image: url("img/mgm.png");
+    background-size: cover;
+}
+
+@media only screen and (min-width: 3px) {
+    
+    body {
+        width: 100%;
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+
+    .search-container {
+        width: 100%;
+        padding: 0px;
+        margin-bottom: 200px;
+    }
+
+    .search-grid2 {
+        width: 85%;
+        padding: 0px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #logocontainer {
+        width: 100%;
+        height: 100px;
+        padding-left: 30px;
+        padding-right: 30px;
+        padding-top: 0px;
+    }
+
+    #quotediv {
+        background-color: lightblue;
+        padding-left: 5%;
+        padding-right: 5%;
+        height: 280px;
+        margin: 0px;
+    }
+
+    #quotetext {
+        margin-top: -100px;
+        font-size: 25px;
+    }
+
+    .restaurant-ratings {
+        margin: 0px;
+    }
+
+    #resultdiv {
+        width: 100%;
+        margin: 0px;
+        margin-top: 100px;
+    }
+
+    #events-result {
+        text-align: center;
+        padding-left: 10px;
+        padding-right: 10px;
+        height: auto;
+    }
+    
+    #eats-result {
+        text-align: center;
+        padding-left: 10px;
+        padding-right: 10px;
+        height: auto;
+    }
+
+    #resultstitle {
+        font-weight: bold;
+        font-size: 20px;
+    }
+
+    #restaurant-names {
+        font-weight: bold;
+        font-size: 20px;
+    }
+
+    .restaurant-address {
+        font-weight: bold;
+        font-size: 16px;
+    }
+
+    .eventaddress {
+        font-weight: bold;
+        font-size: 16px;
+    }
+
+    #formcontainer {
+        margin-top: 200px;
+        margin-bottom: 200px;
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #about-container {
+        width: 85%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 25px;
+        margin-bottom: 0px;
+    }
+
+}
+
+@media only screen and (min-width: 768px) {
+    #resultstitle {
+        font-weight: bold;
+        font-size: 30px;
+    }
+
+    #restaurant-names {
+        font-weight: bold;
+        font-size: 30px;
+}
+
+.restaurant-address {
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.eventaddress {
+    font-weight: bold;
+    font-size: 25px;
+}
+
+#formcontainer {
+    margin-top: 200px;
+    margin-bottom: 200px;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+}
+
