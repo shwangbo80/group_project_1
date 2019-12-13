@@ -431,6 +431,11 @@ body {
         padding-left: 15px;
     }
 
+    #logoimg {
+        max-width: 100%;
+        height: auto;
+    }
+
     .restaurant-ratings {
         margin: 0px;
     }
