@@ -31,7 +31,7 @@ $( document ).ready(function() {
     
                             var tickets = response.venues[i].url;
                             console.log(tickets);
-                            var newTickets = $("<p id='ticketlink'>").html("<a href="+tickets+"target='_blank'>Purchase Tickets</a>");
+                            var newTickets = $("<p id='ticketlink'>").html("<a target='_blank' href="+tickets+">Purchase Tickets</a>");
                             $(newDiv).append(newTickets);
     
                             $("#events-result").append(newDiv);
